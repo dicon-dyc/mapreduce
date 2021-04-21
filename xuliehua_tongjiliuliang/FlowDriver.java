@@ -11,7 +11,7 @@ import javax.xml.soap.Text;
 import java.io.IOException;
 
 public class FlowDriver {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
 
         //1.获取job
         Configuration configuration = new Configuration();
@@ -38,7 +38,5 @@ public class FlowDriver {
 
         //提交任务
         job.waitForCompletion(true);
-
-        //7.提交job
     }
 }
