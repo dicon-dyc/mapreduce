@@ -1,6 +1,7 @@
 package wordcount;
 
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -21,7 +22,12 @@ public class WordCountDriver {
         Configuration configuration = new Configuration();
         //定义一个job任务
         Job job = Job.getInstance(configuration);
-
+        //清空路径
+        FileSystem fs = FileSystem.get(configuration);
+        Path out_path = new Path("F:\\ij\\mapreduce\\src\\main\\output\\WordCountoutput");
+        if(fs.exists(out_path)){
+            fs.delete(out_path,true);
+        }
         //配置job的信息
         job.setJarByClass(WordCountDriver.class);
         //指定自定义的mapper类以及mapper的输出数据类型到job
