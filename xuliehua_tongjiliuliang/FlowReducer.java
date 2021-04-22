@@ -22,6 +22,7 @@ public class FlowReducer extends Reducer<Text,FlowBean,Text,FlowBean> {
         //2.封装
         outv.setUpflow(totalUp);
         outv.setDownflow(totalDown);
+        outv.setSumflow();
 
         context.write(key,outv);
     }
