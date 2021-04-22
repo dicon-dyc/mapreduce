@@ -30,6 +30,8 @@ public class FTDriver {
         //5.设置最终输出kv
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FTBean.class);
+        job.setPartitionerClass(FTPartitioner.class);
+        job.setNumReduceTasks(4);
 
         //6.设置文件输入输出路径
         FileInputFormat.setInputPaths(job,new Path(""));
