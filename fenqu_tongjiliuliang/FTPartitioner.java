@@ -12,13 +12,13 @@ public class FTPartitioner extends Partitioner<Text,FTBean> {
         String substring = line.substring(0, 3);
         int partition;
         if ("136".equals(substring)){
-            partition = 1;
+            partition = 0;
         }else if ("137".equals(substring)){
-            partition = 2;
+            partition = 1;
         }else if ("138".equals(substring)){
-            partition = 3;
+            partition = 2;
         }else{
-            partition = 4;
+            partition = 3;
         }
 
         return partition;

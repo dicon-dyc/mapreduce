@@ -57,6 +57,7 @@ public class FTBean implements Writable {
         out.writeLong(sumflow);
     }
 
+
     @Override
     public void readFields(DataInput in) throws IOException {
 
