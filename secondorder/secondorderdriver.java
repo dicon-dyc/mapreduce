@@ -30,6 +30,7 @@ public class secondorderdriver {
         job.setOutputValueClass(Text.class);
 
         job.setPartitionerClass(secondorderpartitioner.class);
+        job.setNumReduceTasks(5);
 
         FileInputFormat.setInputPaths(job,new Path("F:\\ij\\mapreduce\\src\\main\\input\\secondorder"));
         FileOutputFormat.setOutputPath(job,new Path("F:\\ij\\mapreduce\\src\\main\\output\\secondorderoutput"));
